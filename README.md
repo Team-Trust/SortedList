@@ -7,17 +7,16 @@ import java.awt.List;
 
 public class SortedList extends List {
 
-    public SortedList(int maxItems) // Instantiates and returns a reference to an empty list object with room for maxItems elements.
+    public SortedList(int maxItems)
     {
         super(maxItems);
     }
 
-    public SortedList() // Instantiates and returns a reference to an empty list object with room for 100 elements.
-    {
+    public SortedList() {
         super(100);
     }
 
-    public boolean isThere(Listable item) // Returns true if an element with the same key as item is on this list, otherwise returns false.
+    public boolean isThere(Listable item) 
     {
         int compareResult;
         int midPoint;
@@ -46,7 +45,7 @@ public class SortedList extends List {
         return found;
     }
 
-    public Listable retrieve(Listable item) // Returns a copy of the list element with the same key as item
+    public Listable retrieve(Listable item) 
     {
         int compareResult;
         int first = 0;
@@ -60,10 +59,10 @@ public class SortedList extends List {
 
             if (compareResult == 0) {
                 found = true;
-            } else if (compareResult < 0) // item is less than element at location
+            } else if (compareResult < 0) 
             {
                 last = midPoint - 1;
-            } else // item is greater than element at location
+            } else 
             {
                 first = midPoint + 1;
             }
@@ -72,7 +71,7 @@ public class SortedList extends List {
         return list[midPoint].copy();
     }
 
-    public void insert(Listable item) // Adds a copy of item to this list. 
+    public void insert(Listable item) 
     {
         int location = 0;
         boolean moreToSearch = (location < numItems);
@@ -81,7 +80,7 @@ public class SortedList extends List {
             if (item.compareTo(list[location]) < 0)
             {
                 moreToSearch = false;
-            } else // item is more
+            } else 
             {
                 location++;
                 moreToSearch = (location < numItems);
