@@ -31,11 +31,11 @@ public class SortedList extends List {
 
             if (compareResult == 0) {
                 found = true;
-            } else if (compareResult < 0) // item is less than element at location
+            } else if (compareResult < 0)
             {
                 last = midPoint - 1;
                 moreToSearch = (first <= last);
-            } else // item is greater than element at location
+            } else
             {
                 first = midPoint + 1;
                 moreToSearch = (first <= last);
